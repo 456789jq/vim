@@ -1,11 +1,13 @@
 " plugins here ###################################
 call plug#begin('~/.vim/plugged')
+" Plug 'stevearc/vim-arduino'
 Plug 'dstein64/vim-startuptime'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic' " syntax checking/highilghting
 Plug 'nvie/vim-flake8' " PEP 8 checking with this nifty little plugin
 Plug 'tpope/vim-fugitive' " git integration
+
 " I don't kown is install those plugin let js with vim work or just this config file some value error poblem.
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
@@ -35,20 +37,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " A Vim Plugin for Lively Previewing LaTeX PDF Output
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 " a manager style for vim or neovim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " autochange input method
-Plug 'rlue/vim-barbaric'
+" Plug 'rlue/vim-barbaric'
 
 " scheme
 Plug 'rebelot/kanagawa.nvim'
 
 " preview markdown
-Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+" Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 call plug#end()
 execute pathogen#infect()
@@ -124,12 +126,12 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set shiftwidth=2
 
 "let g:livepreview_previewer = "open -a 'Google Chrome'"
-let g:livepreview_previewer = "open -a Preview"
+" let g:livepreview_previewer = "open -a Preview"
 " autocmd Filetype tex setl updatetime=1
 "let g:livepreview_previewer = 'open -a texshop'
 " let g:livepreview_engine = "luatex"
-let g:livepreview_engine = "xelatex"
-let g:livepreview_cursorhold_recompile = 0
+" let g:livepreview_engine = "xelatex"
+" let g:livepreview_cursorhold_recompile = 0
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 
