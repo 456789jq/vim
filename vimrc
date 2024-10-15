@@ -53,6 +53,7 @@ Plug 'rebelot/kanagawa.nvim'
 " Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 call plug#end()
+" this vim-pathogen install that before restart vim
 execute pathogen#infect()
 " has be deleted plugin:
 " Plug 'plasticboy/vim-markdown'
