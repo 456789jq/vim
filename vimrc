@@ -53,6 +53,13 @@ Plug 'rebelot/kanagawa.nvim'
 " Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 call plug#end()
+
+" windows font 
+set guifont=Hack\ Nerd\ Font\ Mono:h11
+
+" windows line space 
+set linespace=4
+
 " this vim-pathogen install that before restart vim
 execute pathogen#infect()
 " has be deleted plugin:
@@ -134,13 +141,18 @@ au BufNewFile,BufRead *.js, *.html, *.css
 " let g:livepreview_engine = "xelatex"
 " let g:livepreview_cursorhold_recompile = 0
 
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+" 设置coc.pyright 的工作目录，因为vim没有这个功能，这是coc提供的。
+
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
+
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936,utf-16
 
 let python_highlight_all=1
 
-set nu
+set termencoding=utf-8
 
 set encoding=utf-8
+
 " set autoindent			" Respect indentation when starting a new line.
 set expandtab			" expand tabs to spaces. essential in python.
 set tabstop=4			" number of spaces tab is counted for.
@@ -171,7 +183,8 @@ set undodir="$HOME/.vim/undodir")
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
-set clipboard=unnamed  " Copy into system (*) register.
+" Copy into system (*) register.
+set clipboard=unnamed
 
 nnoremap <leader>g :execute grep -R '<cWORD>' .<cr>
 
@@ -415,6 +428,13 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " Remap keys for terminal mode
 " tnoremap <Esc> <C-\><C-n> it has incompatible with 'Buffers' of fzf command.
 
+" ####### fzf ######
+
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['hidden,right,50%,<70(up,40%)', 'ctrl-/']
+
+
+" ####### fzf ###### end
 
 " Remap keys for tagbar
 nmap <silent><F8> :TagbarToggle<CR>
@@ -524,4 +544,6 @@ noremap <c-l> <c-w><c-l>
 
 " }}}
 
-                    
+cnoremap <C-v> <C-R>+
+
+
